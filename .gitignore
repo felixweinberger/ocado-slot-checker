@@ -3,6 +3,7 @@
 
 # puppeteer stuff
 user_data
+cookies.json
 
 # Logs
 logs
