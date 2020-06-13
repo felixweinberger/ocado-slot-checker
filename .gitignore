@@ -1,6 +1,9 @@
 # macOS stuff
 .DS_Store
 
+# puppeteer stuff
+user_data
+
 # Logs
 logs
 *.log
