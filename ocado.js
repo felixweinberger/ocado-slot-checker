@@ -3,16 +3,19 @@ const cron = require('node-cron');
 const notifier = require('node-notifier');
 const fs = require('fs-extra');
 
-checkSlotsAndNotify()
-// cron.schedule('*/1 * * * *', checkSlotsAndNotify)
-// checkAvailableSlots()
+(async () => {
+  const page = await loadBrowserPage()
+  // console.log(page)
+  checkSlotsAndNotify(page)
+  cron.schedule('*/1 * * * *', () => checkSlotsAndNotify(page))
+})()
 
-async function checkSlotsAndNotify() {
+async function checkSlotsAndNotify(page) {
   try {
     const {
       hasSlotsAvailable,
       isDeliverySlotPage
-    } = await checkAvailableSlots();
+    } = await checkAvailableSlots(page);
 
     const now = new Date();
     const dateString = now.toLocaleDateString('en-GB', {day: 'numeric', month:'short', weekday: 'short'});
@@ -47,19 +50,8 @@ async function checkSlotsAndNotify() {
   }
 }
 
-async function checkAvailableSlots() {
+async function checkAvailableSlots(page) {
   try {
-    const browser = await puppeteer.launch({
-      headless: false,
-      userDataDir: "./user_data",
-      args: [
-        "--window-size=1920,1200",
-      ]
-    });
-
-    const page = await browser.newPage();
-    await restoreCookies(page, 'cookies.json')
-
     await page.goto('https://www.ocado.com/webshop/getAddressesForDelivery.do', {waitUntil: 'networkidle2'});
     await page.setViewport({ width: 1920, height: 1200});
     const html = await page.content();
@@ -74,6 +66,20 @@ async function checkAvailableSlots() {
     console.log("check available slots error", err);
   }
 };
+
+async function loadBrowserPage() {
+  try {
+    const browser = await puppeteer.launch({
+      headless: true,
+    });
+
+    const page = await browser.newPage();
+    await restoreCookies(page, 'cookies.json')
+    return page
+  } catch (err) {
+    console.log("prepare browser error", err);
+  }
+}
 
 async function writeCookies(page, cookiesPath) {
   try {
