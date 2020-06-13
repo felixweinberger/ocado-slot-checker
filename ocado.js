@@ -23,27 +23,34 @@ async function checkSlotsAndNotify(page) {
     const dateTimeString = '[' + dateString + ' ' + timeString + ']';
 
     if (!isDeliverySlotPage) {
-      console.log(dateTimeString + " 🤬 You were logged out of Ocado! Run chrome in GUI mode, login, and restart the Ocado checker.")
+      const notification = dateTimeString + " 🤬 You were logged out of Ocado! Run chrome in GUI mode, login, and restart the Ocado checker.";
+      console.log(notification);
+      fs.appendFileSync('log.txt', notification + '\n');
       notifier.notify({
         title: "Ocado checker",
-        sound: true,
+        sound: 'Basso',
         message: "🤬 You were logged out of Ocado!"
       });
       return;
     }
 
     if (hasSlotsAvailable) {
-      console.log(dateTimeString + " 😱 Slots available! Check https://www.ocado.com/webshop/getAddressesForDelivery.do right now!");
+      const notification = dateTimeString + " 😱 Slots available! Check https://www.ocado.com/webshop/getAddressesForDelivery.do right now!";
+      console.log(notification);
+      fs.appendFileSync('log.txt', notification + '\n');
       notifier.notify({
         title: "Ocado checker",
-        sound: true,
+        sound: 'Glass',
         open: "https://www.ocado.com/webshop/getAddressesForDelivery.do",
-        message: "😱 Slots available!"
+        message: "😱 Slots available!",
+        timeout: 60
       });
       return
     } 
 
-    console.log(dateTimeString + " 😭 No slots available.");
+    const notification = dateTimeString + " 😭 No slots available.";
+    console.log(notification);
+    fs.appendFileSync('log.txt', notification + '\n');
     return;
   } catch (err) {
     console.log("check slots and notify error");
