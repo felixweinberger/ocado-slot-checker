@@ -2,8 +2,7 @@ const puppeteer = require('puppeteer');
 const cron = require('node-cron');
 const notifier = require('node-notifier');
 
-// cron.schedule('*/1 * * * *', checkSlotsAndNotify)
-checkSlotsAndNotify();
+cron.schedule('*/1 * * * *', checkSlotsAndNotify)
 
 async function checkSlotsAndNotify() {
   const {
@@ -26,7 +25,7 @@ async function checkSlotsAndNotify() {
     return;
   }
 
-  if (!hasSlotsAvailable) {
+  if (hasSlotsAvailable) {
     console.log(dateTimeString + " 😱 Slots available! Check https://www.ocado.com/webshop/getAddressesForDelivery.do right now!");
     notifier.notify({
       title: "Ocado checker",
@@ -45,9 +44,9 @@ async function checkAvailableSlots() {
   const browser = await puppeteer.launch({
     headless: false,
     executablePath: "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+    userDataDir: "./user_data",
     args: [
       "--window-size=1920,1200",
-      "--user-data-dir=/Users/felixweinberger/Library/Application Support/Google/Chrome/Default"
     ]
   });
 
