@@ -2,6 +2,7 @@ const puppeteer = require('puppeteer');
 const cron = require('node-cron');
 const notifier = require('node-notifier');
 const fs = require('fs-extra');
+const path = require('path');
 
 (async () => {
   const page = await loadBrowserPage()
@@ -25,7 +26,7 @@ async function checkSlotsAndNotify(page) {
     if (!isDeliverySlotPage) {
       const notification = dateTimeString + " 🤬 You were logged out of Ocado! Run chrome in GUI mode, login, and restart the Ocado checker.";
       console.log(notification);
-      fs.appendFileSync('log.txt', notification + '\n');
+      fs.appendFileSync(path.join(__dirname, 'log.txt'), notification + '\n');
       notifier.notify({
         title: "Ocado checker",
         sound: 'Basso',
@@ -37,7 +38,7 @@ async function checkSlotsAndNotify(page) {
     if (hasSlotsAvailable) {
       const notification = dateTimeString + " 😱 Slots available! Check https://www.ocado.com/webshop/getAddressesForDelivery.do right now!";
       console.log(notification);
-      fs.appendFileSync('log.txt', notification + '\n');
+      fs.appendFileSync(path.join(__dirname, 'log.txt'), notification + '\n');
       notifier.notify({
         title: "Ocado checker",
         sound: 'Glass',
@@ -50,7 +51,7 @@ async function checkSlotsAndNotify(page) {
 
     const notification = dateTimeString + " 😭 No slots available.";
     console.log(notification);
-    fs.appendFileSync('log.txt', notification + '\n');
+    fs.appendFileSync(path.join(__dirname, 'log.txt'), notification + '\n');
     return;
   } catch (err) {
     console.log("check slots and notify error");
@@ -81,7 +82,7 @@ async function loadBrowserPage() {
     });
 
     const page = await browser.newPage();
-    await restoreCookies(page, 'cookies.json')
+    await restoreCookies(page, path.join(__dirname, 'cookies.json'))
     return page
   } catch (err) {
     console.log("prepare browser error", err);

@@ -1,0 +1,52 @@
+[Sat, 13 Jun 16:53:54] 😭 No slots available.
+[Sat, 13 Jun 16:54:01] 😭 No slots available.
+[Sat, 13 Jun 16:55:01] 😭 No slots available.
+[Sat, 13 Jun 16:56:01] 😭 No slots available.
+[Sat, 13 Jun 16:57:02] 😭 No slots available.
+[Sat, 13 Jun 16:58:01] 😭 No slots available.
+[Sat, 13 Jun 16:59:02] 😭 No slots available.
+[Sat, 13 Jun 17:00:02] 😭 No slots available.
+[Sat, 13 Jun 17:01:01] 😭 No slots available.
+[Sat, 13 Jun 17:02:01] 😭 No slots available.
+[Sat, 13 Jun 17:03:02] 😭 No slots available.
+[Sat, 13 Jun 17:04:02] 😭 No slots available.
+[Sat, 13 Jun 17:05:02] 😭 No slots available.
+[Sat, 13 Jun 17:06:01] 😭 No slots available.
+[Sat, 13 Jun 17:07:02] 😭 No slots available.
+[Sat, 13 Jun 17:08:01] 😭 No slots available.
+[Sat, 13 Jun 17:09:02] 😭 No slots available.
+[Sat, 13 Jun 17:10:01] 😭 No slots available.
+[Sat, 13 Jun 17:11:02] 😭 No slots available.
+[Sat, 13 Jun 17:12:01] 😭 No slots available.
+[Sat, 13 Jun 17:13:01] 😭 No slots available.
+[Sat, 13 Jun 17:14:01] 😭 No slots available.
+[Sat, 13 Jun 17:15:01] 😭 No slots available.
+[Sat, 13 Jun 17:16:01] 😭 No slots available.
+[Sat, 13 Jun 17:17:02] 😭 No slots available.
+[Sat, 13 Jun 17:18:01] 😭 No slots available.
+[Sat, 13 Jun 17:19:02] 😭 No slots available.
+[Sat, 13 Jun 17:20:01] 😭 No slots available.
+[Sat, 13 Jun 17:21:02] 😭 No slots available.
+[Sat, 13 Jun 17:22:01] 😭 No slots available.
+[Sat, 13 Jun 17:23:02] 😭 No slots available.
+[Sat, 13 Jun 17:24:01] 😭 No slots available.
+[Sat, 13 Jun 17:25:01] 😭 No slots available.
+[Sat, 13 Jun 17:49:07] 😭 No slots available.
+[Sat, 13 Jun 18:26:33] 😭 No slots available.
+[Sat, 13 Jun 18:52:58] 🤬 You were logged out of Ocado! Run chrome in GUI mode, login, and restart the Ocado checker.
+[Sat, 13 Jun 18:53:01] 😭 No slots available.
+[Sat, 13 Jun 18:54:01] 😭 No slots available.
+[Sat, 13 Jun 18:55:01] 😭 No slots available.
+[Sat, 13 Jun 18:56:02] 😭 No slots available.
+[Sat, 13 Jun 18:57:01] 😭 No slots available.
+[Sat, 13 Jun 18:58:02] 😭 No slots available.
+[Sat, 13 Jun 18:59:02] 😭 No slots available.
+[Sat, 13 Jun 19:00:02] 😭 No slots available.
+[Sat, 13 Jun 19:01:02] 😭 No slots available.
+[Sat, 13 Jun 19:02:02] 😭 No slots available.
+[Sat, 13 Jun 19:03:01] 😭 No slots available.
+[Sat, 13 Jun 19:04:02] 😭 No slots available.
+[Sat, 13 Jun 19:05:01] 😭 No slots available.
+[Sun, 14 Jun 08:51:07] 🤬 You were logged out of Ocado! Run chrome in GUI mode, login, and restart the Ocado checker.
+[Sun, 14 Jun 08:52:00] 🤬 You were logged out of Ocado! Run chrome in GUI mode, login, and restart the Ocado checker.
+[Mon, 15 Jun 10:06:47] 🤬 You were logged out of Ocado! Run chrome in GUI mode, login, and restart the Ocado checker.
